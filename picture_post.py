@@ -16,6 +16,9 @@ def picGet(c_num):
     count = 0
     time.sleep(0.3)
 
+    url = 'http://127.0.0.1:8000/photo/in/'
+    img_list=[]
+
 
     #撮影ループ
     while True:
@@ -25,22 +28,23 @@ def picGet(c_num):
         ret, frame = cap.read()
         path = dir_path + str(count) + ".png"
         cv2.imwrite(path, frame)
-        url = 'http://127.0.0.1:8000/photo/in/'
 
         f = open(path, 'rb')
         # base64编码
         base64_data = base64.b64encode(f.read())
         f.close()
         base64_data = base64_data.decode()
-        # 传输的数据格式
-        data = {'img': base64_data}
 
-        r = requests.post(url, headers={'Content-Type': 'application/json', }, data=json.dumps(data))
-        print(r.text)
+        img_list.append(base64_data)
+
+
         time.sleep(0.2)
         count += 1
 
     #開放
+    data = {'img':img_list}
+    r = requests.post(url, headers={'Content-Type': 'application/json', }, data=json.dumps(data))
+    print(r.text)
     cap.release()
     cv2.destroyAllWindows()
 
