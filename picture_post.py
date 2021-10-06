@@ -42,7 +42,7 @@ def picGet(c_num):
         count += 1
 
     #開放
-    data = {'img':img_list}
+    data = {'place_id':1,'then_time':date,'img':img_list}
     r = requests.post(url, headers={'Content-Type': 'application/json', }, data=json.dumps(data))
     print(r.text)
     cap.release()
