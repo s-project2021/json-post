@@ -20,4 +20,4 @@ urlで送信先を指定する
 例：`url = 'http://127.0.0.1:8000/ai/'`  
 
 # license
-under gpl3.0
+under [gpl3.0](https://www.gnu.org/licenses/gpl-3.0.txt).
