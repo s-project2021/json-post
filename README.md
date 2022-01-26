@@ -1,8 +1,8 @@
-# 「紹介」
+# 紹介
 picture_post.pyはカメラで画像を取得・送信用プログラム  
 ai_json_post.pyは開発段階でシステムがjsonを受信できるかどうかを確認するため用のプログラム
 
-# 「使い方」
+# 使い方
 ## picture_post.py :
 urlで送信先を指定する  
 例：`url = 'http://127.0.0.1:8000/photo/in/'`  
@@ -18,3 +18,6 @@ urlで送信先を指定する
 ## ai_json_post.py :
 特に注意すべきところはない、urlを指定して実行すればよい  
 例：`url = 'http://127.0.0.1:8000/ai/'`  
+
+# license
+under gpl3.0
